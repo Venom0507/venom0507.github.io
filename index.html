@@ -8,7 +8,12 @@
     <title>Camera App</title>
     <!-- Link to your main style sheet-->
     <link rel="stylesheet" href="style.css">
-</head>
+    <script> 
+    $(function(){
+      $("#camera--sensor").load("stream.html"); 
+    });
+    </script> 
+  </head> 
 <body>
     <!-- Camera -->
     <main id="camera">
