@@ -7,14 +7,14 @@
     <title>Camera App</title>
     <!-- Link to your main style sheet-->
     <link rel="stylesheet" href="styleStreamer.css">
+    <script src="jquery.js"></script> 
+    <script> 
+    $(function(){
+      $("#includedContent").load("index.html"); 
+    });
+    </script> 
   </head> 
 <body>
-    <!-- Camera -->
-    <main id="camera">
-        <!-- Camera view -->
-        <video href="index.html" autoplay playsinline></video>
-    </main>
-    <!-- Reference to your JavaScript file -->
-    <!-- <script src="app.js"></script> -->
-</body>
+    <div id="camera--view"></div>
+    </body>
 </html>
