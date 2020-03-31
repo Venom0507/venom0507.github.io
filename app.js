@@ -14,8 +14,12 @@ function cameraStart() {
     navigator.mediaDevices
         .getUserMedia(constraints)
         .then(function(stream) {
-        track = stream.getTracks()[0];
-        cameraView.srcObject = stream;
+            track = stream.getTracks()[0];
+            cameraView.srcObject = stream;
+            const myMediaSource = new MediaSource();
+            const url = URL.createObjectURL(myMediaSource);
+            // attaching the MediaSource to the video tag
+            cameraView.src = url;
     })
     .catch(function(error) {
         console.error("Oops. Something is broken.", error);
