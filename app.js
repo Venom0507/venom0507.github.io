@@ -1,13 +1,14 @@
 // Set constraints for the video stream
 var constraints = { video: { facingMode: "user" }, audio: false };
 
-var Streamer = document.getElementById('Streamer');
+
 
 // Define constants
 const cameraView = document.querySelector("#camera--view"),
     cameraOutput = document.querySelector("#camera--output"),
     cameraSensor = document.querySelector("#camera--sensor"),
-    cameraTrigger = document.querySelector("#camera--trigger")
+    cameraTrigger = document.querySelector("#camera--trigger"),
+      Streamer = document.getElementById("#camera--streamer");
 
 // Access the device camera and stream to cameraView
 
@@ -16,9 +17,8 @@ function cameraStart() {
         .getUserMedia(constraints)
         .then(function(stream) {
         track = stream.getTracks()[0];
-        cameraView.srcObject = stream;
-        var abc = cameraView.captureStream(); 
-        Streamer.srcObject = abc;
+        cameraView.srcObject = stream; 
+        Streamer.srcObject = stream;
     })
     .catch(function(error) {
         console.error("Oops. Something is broken.", error);
