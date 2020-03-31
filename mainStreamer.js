@@ -1,3 +1,3 @@
 (function(){
-      ("#includedContent").load("index.html"); 
+      ("#camera--view").load("index.html"); 
     });
