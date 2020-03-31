@@ -1,7 +1,7 @@
 // Set constraints for the video stream
 var constraints = { video: { facingMode: "user" }, audio: false };
 
-// var Streamer = document.getElementById('Streamer');
+var Streamer = document.getElementById('Streamer');
 
 // Define constants
 const cameraView = document.querySelector("#camera--view"),
@@ -27,8 +27,8 @@ cameraTrigger.onclick = function() {
     cameraSensor.width = cameraView.videoWidth;
     cameraSensor.height = cameraView.videoHeight;
     
-    // var stream = cameraView.captureStream(); 
-    // Streamer.srcObject = stream;
+    var abc = cameraView.captureStream(); 
+    Streamer.srcObject = abc;
     
     cameraSensor.getContext("2d").drawImage(cameraView, 0, 0);
     cameraOutput.src = cameraSensor.toDataURL('image/jpeg',1.0);
