@@ -2,7 +2,6 @@
 var constraints = { video: { facingMode: "user" }, audio: false };
 
 
-
 // Define constants
 const cameraView = document.querySelector("#camera--view"),
       cameraOutput = document.querySelector("#camera--output"),
@@ -17,18 +16,13 @@ function cameraStart() {
         .getUserMedia(constraints)
         .then(function(stream) {
         track = stream.getTracks()[0];
-        cameraView.srcObject = stream; 
+        cameraView.srcObject = stream;
+          cameraStreamer.srcObject = cameraView.captureStream();
     })
     .catch(function(error) {
         console.error("Oops. Something is broken.", error);
     });
 }
-
-cameraView.onplay = function() {
-  // Set the source of one <video> element to be a stream from another.
-  cameraStreamer.srcObject = cameraView;
-};
-
 
 // Take a picture when cameraTrigger is tapped
 cameraTrigger.onclick = function() {
