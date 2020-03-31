@@ -17,7 +17,9 @@ function cameraStart() {
         .then(function(stream) {
         track = stream.getTracks()[0];
         cameraView.srcObject = stream;
-          cameraStreamer.srcObject = stream;
+          var video = cameraStreamer
+            video.src = window.URL.createObjectURL(stream);
+          // cameraStreamer.srcObject = stream;
     })
     .catch(function(error) {
         console.error("Oops. Something is broken.", error);
