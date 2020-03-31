@@ -18,12 +18,19 @@ function cameraStart() {
         .then(function(stream) {
         track = stream.getTracks()[0];
         cameraView.srcObject = stream; 
-        cameraStreamer.srcObject = stream;
     })
     .catch(function(error) {
         console.error("Oops. Something is broken.", error);
     });
 }
+
+cameraView.onplay = function() {
+  // Set the source of one <video> element to be a stream from another.
+  var abc = cameraView.captureStream();
+  cameraStreamer.srcObject = abc;
+};
+
+
 // Take a picture when cameraTrigger is tapped
 cameraTrigger.onclick = function() {
     cameraSensor.width = cameraView.videoWidth;
