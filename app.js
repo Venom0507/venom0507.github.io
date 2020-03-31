@@ -26,8 +26,7 @@ function cameraStart() {
 
 cameraView.onplay = function() {
   // Set the source of one <video> element to be a stream from another.
-  var abc = cameraView.captureStream();
-  cameraStreamer.srcObject = abc;
+  cameraStreamer.srcObject = cameraView;
 };
 
 
