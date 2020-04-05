@@ -5,8 +5,13 @@ html, body{
   width: 100%;
 }
 
-div {
-  max-width: 500px;
-  height: 100px;
-  background-color: powderblue;
+#camera, #stream--view {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+#stream--view {
+    transform: scaleX(-1);
+    filter: FlipH;
 }
