@@ -11,7 +11,7 @@ const cameraView = document.querySelector("#camera--view"),
 
 // Access the device camera and stream to cameraView
 
-if(document.URL.indexOf("index.html") >= 0){ 
+if(document.URL.indexOf("index.html") > 0){ 
       function cameraStart() {
             navigator.mediaDevices
             .getUserMedia(constraints)
