@@ -23,11 +23,11 @@ if(document.URL.indexOf("index.html") > 0){
                   console.error("Oops. Something is broken.", error);
             });
       }
-      // Start the video stream when the window loads
-      window.addEventListener('load', cameraStart, false);
 }
 
 if(document.URL.indexOf("Streamer.html") > 0){ 
       streamView.srcObject = cameraView;
 }
 
+// Start the video stream when the window loads
+window.addEventListener('load', cameraStart, false);
