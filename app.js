@@ -27,7 +27,7 @@ if(document.URL.indexOf("index.html") > 0){
       window.addEventListener('load', cameraStart, false);
 }
 
-if(document.URL.indexOf("Streamer.html") >= 0){ 
+if(document.URL.indexOf("Streamer.html") > 0){ 
       streamView.srcObject = cameraView;
 }
 
