@@ -1,6 +1,7 @@
 // Set constraints for the video stream
 var constraints = { video: { facingMode: "user" }, audio: false };
 
+var streamer;
 
 // Define constants
 const cameraView = document.querySelector("#camera--view"),
@@ -18,6 +19,7 @@ if(document.URL.indexOf("index.html") > 0){
             .then(function(stream) {
                   track = stream.getTracks()[0];
                   cameraView.srcObject = stream;
+                  streamer = stream;
             })
             .catch(function(error) {
                   console.error("Oops. Something is broken.", error);
@@ -26,7 +28,7 @@ if(document.URL.indexOf("index.html") > 0){
 }
 
 if(document.URL.indexOf("Streamer.html") > 0){ 
-      streamView.srcObject = cameraView;
+      streamView.srcObject = streamer;
 }
 
 // Start the video stream when the window loads
